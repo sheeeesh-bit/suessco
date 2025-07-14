@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sensor Project Dashboard</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="https://suessco-worker.thomas-potzmader.workers.dev/show-project-name-and-id/main.css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <span class="font-large">
+            <strong id="userLabel-label">{i18n:dashboard.sensor.sensor-project}</strong> <span id="userLabel">${userLabel}</span>
+        </span>
+
+        <br>
+
+        <span class="font-large">
+            <strong id="name-label">{i18n:dashboard.sensor.sensor-project-id}</strong> <span id="name">${name}</span>
+        </span>
+    </div>
+
+    <script>
+        // Function to parse URL parameters
+        function getUrlParameters() {
+            const params = new URLSearchParams(window.location.search);
+            const result = {};
+            
+            for (const [key, value] of params.entries()) {
+                result[key] = value;
+            }
+            
+            return result;
+        }
+
+        // Function to populate the page with URL parameters
+        function populateFromUrlParams() {
+            const params = getUrlParameters();
+            
+            // Update userLabel and its label
+            if (params['userLabel-label']) {
+                const labelElement = document.getElementById('userLabel-label');
+                labelElement.textContent = params['userLabel-label'];
+            }
+            
+            if (params['userLabel']) {
+                const valueElement = document.getElementById('userLabel');
+                valueElement.textContent = params['userLabel'];
+            }
+            
+            // Update name and its label
+            if (params['name-label']) {
+                const labelElement = document.getElementById('name-label');
+                labelElement.textContent = params['name-label'];
+            }
+            
+            if (params['name']) {
+                const valueElement = document.getElementById('name');
+                valueElement.textContent = params['name'];
+            }
+        }
+
+        // Run when the page loads
+        document.addEventListener('DOMContentLoaded', populateFromUrlParams);
+    </script>
+</body>
+</html>

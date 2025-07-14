@@ -1,0 +1,14 @@
+{
+  "name": "suessco-worker",
+  "version": "1.0.0",
+  "description": "Static website deployed on Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "build": "wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "wrangler": "^4.24.3"
+  }
+}

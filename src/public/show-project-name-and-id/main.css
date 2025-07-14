@@ -1,0 +1,24 @@
+br {
+    display: block; /* Ensures line breaks are displayed */
+    margin-top: 10px; /* Adjusts spacing between elements */
+}
+
+.font-large {
+    font-size: 20px;
+    font-family: Arial, sans-serif; /* Sets font family */
+}
+
+.strong {
+    font-weight: bold; /* Makes text bold */
+}
+
+.installation-date {
+    font-size: 20px;
+    font-family: Arial, sans-serif; /* Sets font family */
+}
+
+.date {
+    display: inline; /* Keeps the date inline with the text */
+    font-size: 20px;
+    font-family: Arial, sans-serif; /* Matches font family */
+}
