@@ -1,0 +1,19 @@
+# File: .github/workflows/purge-jsdelivr-cache.yml
+name: Purge jsDelivr Cache on Tag
+
+# Run only when a new tag is pushed
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  purge-jsdelivr-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr cache
+        uses: gacts/purge-jsdelivr-cache@v1.1.2
+        with:
+          url: |
+            https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/main.min.js
+            https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/design.min.js
