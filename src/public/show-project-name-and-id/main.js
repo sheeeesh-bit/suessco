@@ -1,17 +1,27 @@
-// ThingsBoard-compatible global function
 window.handelCTX = function(ctx = null) {
   if (ctx != null) {
-    // Extract data
-    const userLabel = ctx.data?.[0]?.data?.[0]?.[1] || "No Data";
-    const name = ctx.data?.[1]?.data?.[0]?.[1] || "No Data";
+    // 1. HREF aus Settings oder Default
+    const defaultHref = 'https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/design.css';
+    const cssHref = ctx.settings?.cssHref || defaultHref;
 
-    // Translations
-    const userLabelLabel = ctx.translate?.instant('dashboard.sensor.sensor-project') || "Project";
-    const nameLabel = ctx.translate?.instant('dashboard.sensor.sensor-project-id') || "Project ID";
+    // 2. Nur einmalig ins <head> einfügen
+    if (!document.querySelector(`link[href="${cssHref}"]`)) {
+      const linkEl = document.createElement('link');
+      linkEl.rel = 'stylesheet';
+      linkEl.href = cssHref;
+      document.head.appendChild(linkEl);
+    }
 
-    // HTML content with external CSS via jsDelivr
+    // 3. Daten extrahieren
+    const userLabel = ctx.data?.[0]?.data?.[0]?.[1] || 'No Data';
+    const name      = ctx.data?.[1]?.data?.[0]?.[1] || 'No Data';
+
+    // 4. Übersetzungen
+    const userLabelLabel = ctx.translate?.instant('dashboard.sensor.sensor-project') || 'Project';
+    const nameLabel      = ctx.translate?.instant('dashboard.sensor.sensor-project-id') || 'Project ID';
+
+    // 5. Nur das Content-HTML zurückgeben
     return `
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@v0.0.5/src/public/show-project-name-and-id/design.css">
       <div class="container">
         <br>
         <span class="font-large">
@@ -25,9 +35,8 @@ window.handelCTX = function(ctx = null) {
     `;
   }
 
-  // Fallback when context is not available
+  // Fallback
   return `
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@v0.0.5/src/public/show-project-name-and-id/design.css">
     <div class="container">
       <br>
       <span class="font-large">
