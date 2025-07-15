@@ -17,7 +17,7 @@ window.handelCTX = function(ctx = null) {
         <span class="font-large">
           <strong>${userLabelLabel}</strong> <span>${userLabel}</span>
         </span>
-        <br>
+        <br class="margine-top">
         <span class="font-large">
           <strong>${nameLabel}</strong> <span>${name}</span>
         </span>
@@ -33,7 +33,7 @@ window.handelCTX = function(ctx = null) {
       <span class="font-large">
         <strong>Project</strong> <span>No Data</span>
       </span>
-      <br>
+      <br class="margine-top">
       <span class="font-large">
         <strong>Project ID</strong> <span>No Data</span>
       </span>
