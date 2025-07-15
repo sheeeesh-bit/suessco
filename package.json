@@ -1,16 +1,13 @@
 {
-  "name": "suessco-worker",
+  "name": "suessco-static",
   "version": "1.0.0",
-  "description": "Static website deployed on Cloudflare Workers",
-  "main": "src/index.js",
+  "description": "Static website served via jsDelivr CDN",
+  "main": "src/public/index.html",
   "type": "module",
   "scripts": {
-    "build-static": "node build-static.js",
-    "deploy": "npm run build-static && wrangler deploy",
-    "dev": "npm run build-static && wrangler dev",
-    "build": "npm run build-static && wrangler deploy --dry-run"
+    "serve": "npx serve src/public"
   },
-  "dependencies": {
-    "wrangler": "^4.24.3"
+  "devDependencies": {
+    "serve": "^14.2.1"
   }
 }

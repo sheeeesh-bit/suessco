@@ -1,6 +1,0 @@
-name = "suessco-worker"
-main = "src/index.js"
-compatibility_date = "2023-12-01"
-
-[vars]
-ENVIRONMENT = "production"
