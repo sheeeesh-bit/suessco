@@ -10,7 +10,7 @@ export default function handelCTX(ctx = null) {
 
     // HTML content with external CSS via jsDelivr
     return `
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/thomas-potzmader/suessco@main/src/public/show-project-name-and-id/design.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@v0.0.4/src/public/show-project-name-and-id/design.css">
       <div class="container">
         <br>
         <span class="font-large">
@@ -26,7 +26,7 @@ export default function handelCTX(ctx = null) {
 
   // Fallback when context is not available
   return `
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/thomas-potzmader/suessco@main/src/public/show-project-name-and-id/design.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@v0.0.4/src/public/show-project-name-and-id/design.css">
     <div class="container">
       <br>
       <span class="font-large">
