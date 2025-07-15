@@ -11,7 +11,7 @@ window.handelCTX = function(ctx = null) {
 
     // HTML content with external CSS via jsDelivr
     return `
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/design.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/design.min.css">
       <div class="container">
         <br>
         <span class="font-large">
@@ -27,7 +27,7 @@ window.handelCTX = function(ctx = null) {
 
   // Fallback when context is not available
   return `
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/design.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sheeeesh-bit/suessco@latest/src/public/show-project-name-and-id/design.min.css">
     <div class="container">
       <br>
       <span class="font-large">
